@@ -1,11 +1,8 @@
 package com.springframework.service;
 
 import java.util.List;
-
 import org.springframework.orm.hibernate3.HibernateTemplate;
-
 import com.springframework.bin.rating_master;
-import com.springframework.bin.user_master;
 
 public interface Rating_masterService {
 
@@ -19,9 +16,7 @@ public interface Rating_masterService {
 	
 	public rating_master getByU_Id(int U_Id);
 	
-	@SuppressWarnings("unchecked")
 	public List<rating_master> getRatingsByISBN(String ISBN);
 	
-	@SuppressWarnings("unchecked")
 	public List<rating_master> getRatingsByU_Id(int U_Id);
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.springframework.bin.order_master;
-import com.springframework.bin.user_master;
 
 public interface Order_masterDao {
 
@@ -19,10 +18,8 @@ public interface Order_masterDao {
 	
 	public order_master getByOrder_Id(int Order_Id);
 	
-	@SuppressWarnings("unchecked")
 	public List<order_master> getOrders();
 	
-	@SuppressWarnings("unchecked")
 	public List<order_master> getOrdersByU_Id(int U_Id);
 	
 }

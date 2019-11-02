@@ -19,6 +19,5 @@ public interface Order_items_masterService {
 	
 	public order_items_master getByItem_Id(int Item_id);
 	
-	@SuppressWarnings("unchecked")
 	public List<user_master> getOrder_ItemsByOrderId(int Order_id);
 }

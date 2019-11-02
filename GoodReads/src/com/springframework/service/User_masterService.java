@@ -18,7 +18,6 @@ public interface User_masterService {
 	
 	public user_master getByU_Id(int U_Id);
 	
-	@SuppressWarnings("unchecked")
 	public List<user_master> getUsers();
 	
 	public user_master Check_Login(String U_Email,String U_Password);

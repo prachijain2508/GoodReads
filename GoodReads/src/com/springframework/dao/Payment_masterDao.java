@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.springframework.bin.payment_master;
-import com.springframework.bin.user_master;
 
 public interface Payment_masterDao {
 
@@ -22,7 +21,6 @@ public interface Payment_masterDao {
 	
 	public payment_master getByOrder_Id(int Order_Id);
 	
-	@SuppressWarnings("unchecked")
 	public List<payment_master> getPayments();
 	
 }

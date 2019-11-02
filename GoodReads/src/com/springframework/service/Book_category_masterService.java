@@ -18,7 +18,6 @@ public interface Book_category_masterService {
 	
 	public book_category_master getByCat_Id(int Cat_Id);
 	
-	@SuppressWarnings("unchecked")
 	public List<book_category_master> getCategories();
 	
 }

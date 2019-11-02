@@ -16,10 +16,8 @@ public interface Book_masterService {
 	
 	public book_master getByISBN(String ISBN);
 	
-	@SuppressWarnings("unchecked")
 	public List<book_master> getBooks();
 	
-	@SuppressWarnings("unchecked")
 	public List<book_master> getBooksByCat_Id(int Cat_Id);
 	
 }
