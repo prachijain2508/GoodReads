@@ -10,6 +10,8 @@ public interface Order_masterDao {
 
 	public void setTemplate(HibernateTemplate template);
 
+	public void setUdao(User_masterDao udao);
+	
 	public void saveOrder(order_master o);
 	
 	public void updateOrder(order_master o);

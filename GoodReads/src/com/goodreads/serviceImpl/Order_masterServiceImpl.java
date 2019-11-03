@@ -5,46 +5,46 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.order_master;
+import com.goodreads.dao.Order_masterDao;
 import com.goodreads.service.Order_masterService;
 
 public class Order_masterServiceImpl implements Order_masterService {
 
-	
+	private Order_masterDao odao;
+
+	@Override
+	public void setOdao(Order_masterDao odao) {
+		this.odao = odao;
+	}
 
 	@Override
 	public void saveOrder(order_master o) {
-		// TODO Auto-generated method stub
-
+		odao.saveOrder(o);
 	}
 
 	@Override
 	public void updateOrder(order_master o) {
-		// TODO Auto-generated method stub
-
+		odao.updateOrder(o);
 	}
 
 	@Override
 	public void deleteOrder(order_master o) {
-		// TODO Auto-generated method stub
-
+		odao.deleteOrder(o);
 	}
 
 	@Override
 	public order_master getByOrder_Id(int Order_Id) {
-		// TODO Auto-generated method stub
-		return null;
+		return odao.getByOrder_Id(Order_Id);
 	}
 
 	@Override
 	public List<order_master> getOrders() {
-		// TODO Auto-generated method stub
-		return null;
+		return odao.getOrders();
 	}
 
 	@Override
 	public List<order_master> getOrdersByU_Id(int U_Id) {
-		// TODO Auto-generated method stub
-		return null;
+		return odao.getOrdersByU_Id(U_Id);
 	}
 
 }
