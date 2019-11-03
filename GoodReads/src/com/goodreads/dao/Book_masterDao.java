@@ -8,6 +8,8 @@ public interface Book_masterDao {
 	
 	public void setTemplate(HibernateTemplate template);
 
+	public void setBdao(Book_category_masterDao bdao);
+	
 	public void saveBook(book_master b);
 	
 	public void updateBook(book_master b);

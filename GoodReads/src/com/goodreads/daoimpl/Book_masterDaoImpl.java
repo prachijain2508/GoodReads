@@ -5,50 +5,57 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.book_master;
+import com.goodreads.bin.user_master;
+import com.goodreads.dao.Book_category_masterDao;
 import com.goodreads.dao.Book_masterDao;
 
 public class Book_masterDaoImpl implements Book_masterDao {
 
+	private HibernateTemplate template;
+	private Book_category_masterDao bdao;
+	
+	@Override
+	public void setBdao(Book_category_masterDao bdao) {
+		this.bdao = bdao;
+	}
+
 	@Override
 	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
+		this.template=template;
 	}
 
 	@Override
 	public void saveBook(book_master b) {
-		// TODO Auto-generated method stub
-
+		template.save(b);
 	}
 
 	@Override
 	public void updateBook(book_master b) {
-		// TODO Auto-generated method stub
-
+		template.update(b);
 	}
 
 	@Override
 	public void deleteBook(book_master b) {
-		// TODO Auto-generated method stub
-
+		template.delete(b);
 	}
 
 	@Override
 	public book_master getByISBN(String ISBN) {
-		// TODO Auto-generated method stub
-		return null;
+		return (book_master) template.get(book_master.class, ISBN);
 	}
 
 	@Override
 	public List<book_master> getBooks() {
-		// TODO Auto-generated method stub
-		return null;
+		return template.loadAll(book_master.class);
 	}
 
 	@Override
 	public List<book_master> getBooksByCat_Id(int Cat_Id) {
-		// TODO Auto-generated method stub
-		return null;
+		Object[] params  = {Cat_Id};
+		String query = "select distinct b from book_master b \" +\r\n" + 
+				"                \"join b.categories c t \" +\r\n" + 
+				"                \"where c.Cat_Id = ? \"";
+		return template.find(query, params);
 	}
 
 }

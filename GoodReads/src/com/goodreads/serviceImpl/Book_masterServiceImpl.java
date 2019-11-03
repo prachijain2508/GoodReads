@@ -2,48 +2,48 @@ package com.goodreads.serviceImpl;
 
 import java.util.List;
 
-import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.book_master;
+import com.goodreads.dao.Book_masterDao;
 import com.goodreads.service.Book_masterService;
 
 public class Book_masterServiceImpl implements Book_masterService {
 
+	private Book_masterDao bdao;
+	
+	@Override
+	public void setBdao(Book_masterDao bdao) {
+		this.bdao = bdao;
+	}
 
 	@Override
 	public void saveBook(book_master b) {
-		// TODO Auto-generated method stub
-
+		bdao.saveBook(b);
 	}
 
 	@Override
 	public void updateBook(book_master b) {
-		// TODO Auto-generated method stub
-
+		bdao.updateBook(b);
 	}
 
 	@Override
 	public void deleteBook(book_master b) {
-		// TODO Auto-generated method stub
-
+		bdao.deleteBook(b);
 	}
 
 	@Override
 	public book_master getByISBN(String ISBN) {
-		// TODO Auto-generated method stub
-		return null;
+		return bdao.getByISBN(ISBN);
 	}
 
 	@Override
 	public List<book_master> getBooks() {
-		// TODO Auto-generated method stub
-		return null;
+		return bdao.getBooks();
 	}
 
 	@Override
 	public List<book_master> getBooksByCat_Id(int Cat_Id) {
-		// TODO Auto-generated method stub
-		return null;
+		return bdao.getBooksByCat_Id(Cat_Id);
 	}
 
 }
