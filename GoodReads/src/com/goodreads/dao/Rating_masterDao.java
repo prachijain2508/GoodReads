@@ -9,6 +9,10 @@ import com.goodreads.bin.rating_master;
 public interface Rating_masterDao {
 
 	public void setTemplate(HibernateTemplate template);
+	
+	public void setUdao(User_masterDao udao);
+	
+	public void setBdao(Bookmark_masterDao bdao);
 
 	public void saveRating(rating_master r);
 	
@@ -16,7 +20,7 @@ public interface Rating_masterDao {
 	
 	public void deleteRating(rating_master r);
 	
-	public rating_master getByU_Id(int U_Id);
+	public rating_master getByU_IdandISBN(int U_Id,String ISBN);
 	
 	public List<rating_master> getRatingsByISBN(String ISBN);
 	
