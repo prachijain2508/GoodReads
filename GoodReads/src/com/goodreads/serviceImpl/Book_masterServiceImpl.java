@@ -46,4 +46,14 @@ public class Book_masterServiceImpl implements Book_masterService {
 		return bdao.getBooksByCat_Id(Cat_Id);
 	}
 
+	@Override
+	public void addintocategory(String ISBN, int Cat_Id) {
+		bdao.addintocategory(ISBN, Cat_Id);
+	}
+
+	@Override
+	public void Removefromcategory(String ISBN, int Cat_Id) {
+		bdao.Removefromcategory(ISBN, Cat_Id);
+	}
+
 }

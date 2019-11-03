@@ -22,4 +22,8 @@ public interface Book_masterDao {
 	
 	public List<book_master> getBooksByCat_Id(int Cat_Id);
 	
+	public void addintocategory(String ISBN,int Cat_Id);
+	
+	public void Removefromcategory(String ISBN,int Cat_Id);
+	
 }

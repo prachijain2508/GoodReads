@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.book_master;
-import com.goodreads.bin.user_master;
 import com.goodreads.dao.Book_category_masterDao;
 import com.goodreads.dao.Book_masterDao;
 
@@ -56,6 +55,20 @@ public class Book_masterDaoImpl implements Book_masterDao {
 				"                \"join b.categories c t \" +\r\n" + 
 				"                \"where c.Cat_Id = ? \"";
 		return template.find(query, params);
+	}
+
+	@Override
+	public void addintocategory(String ISBN, int Cat_Id) {
+		book_master b=getByISBN(ISBN);
+		b.getCategories().add(bdao.getByCat_Id(Cat_Id));
+		updateBook(b);
+	}
+
+	@Override
+	public void Removefromcategory(String ISBN, int Cat_Id) {
+		book_master b=getByISBN(ISBN);
+		b.getCategories().remove(bdao.getByCat_Id(Cat_Id));
+		updateBook(b);
 	}
 
 }
