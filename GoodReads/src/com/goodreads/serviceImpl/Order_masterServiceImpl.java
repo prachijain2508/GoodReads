@@ -9,11 +9,7 @@ import com.goodreads.service.Order_masterService;
 
 public class Order_masterServiceImpl implements Order_masterService {
 
-	@Override
-	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public void saveOrder(order_master o) {

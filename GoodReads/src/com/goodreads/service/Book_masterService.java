@@ -7,7 +7,6 @@ import com.goodreads.bin.book_master;
 
 public interface Book_masterService {
 	
-	public void setTemplate(HibernateTemplate template);
 
 	public void saveBook(book_master b);
 	

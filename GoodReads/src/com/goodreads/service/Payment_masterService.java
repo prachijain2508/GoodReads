@@ -8,7 +8,6 @@ import com.goodreads.bin.payment_master;
 public interface Payment_masterService {
 
 	
-	public void setTemplate(HibernateTemplate template);
 
 	public void savePayment(payment_master p);
 	

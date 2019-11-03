@@ -10,12 +10,6 @@ import com.goodreads.service.Bookmark_masterService;
 public class Bookmark_masterServiceImpl implements Bookmark_masterService {
 
 	@Override
-	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void saveBookmark(bookmark_master b) {
 		// TODO Auto-generated method stub
 

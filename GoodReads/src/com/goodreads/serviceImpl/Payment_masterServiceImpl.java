@@ -9,12 +9,7 @@ import com.goodreads.service.Payment_masterService;
 
 public class Payment_masterServiceImpl implements Payment_masterService {
 
-	@Override
-	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 	@Override
 	public void savePayment(payment_master p) {
 		// TODO Auto-generated method stub

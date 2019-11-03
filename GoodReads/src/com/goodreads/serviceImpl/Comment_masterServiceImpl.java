@@ -9,11 +9,7 @@ import com.goodreads.service.Comment_masterService;
 
 public class Comment_masterServiceImpl implements Comment_masterService {
 
-	@Override
-	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public void saveComment(comment_master c) {

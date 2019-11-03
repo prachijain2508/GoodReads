@@ -7,7 +7,6 @@ import com.goodreads.bin.order_master;
 
 public interface Order_masterService {
 
-	public void setTemplate(HibernateTemplate template);
 
 	public void saveOrder(order_master o);
 	

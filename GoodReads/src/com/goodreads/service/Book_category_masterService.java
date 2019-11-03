@@ -8,7 +8,6 @@ import com.goodreads.bin.book_category_master;
 
 public interface Book_category_masterService {
 	
-	public void setTemplate(HibernateTemplate template);
 
 	public void saveCategory(book_category_master b);
 	

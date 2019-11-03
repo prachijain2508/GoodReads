@@ -7,7 +7,6 @@ import com.goodreads.bin.comment_master;
 
 public interface Comment_masterService {
 
-	public void setTemplate(HibernateTemplate template);
 
 	public void saveComment(comment_master c);
 	

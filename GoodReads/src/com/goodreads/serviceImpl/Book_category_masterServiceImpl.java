@@ -9,11 +9,7 @@ import com.goodreads.service.Book_category_masterService;
 
 public class Book_category_masterServiceImpl implements Book_category_masterService {
 
-	@Override
-	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public void saveCategory(book_category_master b) {

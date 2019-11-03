@@ -8,7 +8,6 @@ import com.goodreads.bin.bookmark_master;
 
 public interface Bookmark_masterService {
 
-	public void setTemplate(HibernateTemplate template);
 
 	public void saveBookmark(bookmark_master b);
 	
