@@ -21,5 +21,9 @@ public interface Comment_masterDao {
 	public List<comment_master> getCommentsByISBN(String ISBN);
 	
 	public List<comment_master> getCommentsByU_Id(int U_Id);
+
+	void setUdao(User_masterDao udao);
+
+	void setBdao(Book_masterDao bdao);
 	
 }

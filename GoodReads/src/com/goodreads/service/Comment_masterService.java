@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.comment_master;
+import com.goodreads.dao.Comment_masterDao;
 
 public interface Comment_masterService {
 
@@ -19,5 +20,7 @@ public interface Comment_masterService {
 	public List<comment_master> getCommentsByISBN(String ISBN);
 	
 	public List<comment_master> getCommentsByU_Id(int U_Id);
+
+	void setCdao(Comment_masterDao cdao);
 	
 }
