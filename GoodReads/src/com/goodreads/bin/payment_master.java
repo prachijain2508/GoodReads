@@ -9,6 +9,7 @@ public class payment_master {
 	private order_master order;
 	private Timestamp Payment_Date;
 	private String Payment_Mode;
+	
 	public int getPayment_Id() {
 		return Payment_Id;
 	}

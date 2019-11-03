@@ -8,6 +8,7 @@ import com.goodreads.bin.payment_master;
 
 public interface Payment_masterDao {
 
+	public void setOdao(Order_masterDao odao);
 	
 	public void setTemplate(HibernateTemplate template);
 

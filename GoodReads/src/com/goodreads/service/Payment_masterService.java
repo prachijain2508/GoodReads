@@ -4,10 +4,11 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.payment_master;
+import com.goodreads.dao.Payment_masterDao;
 
 public interface Payment_masterService {
 
-	
+	public void setPdao(Payment_masterDao pdao);
 
 	public void savePayment(payment_master p);
 	
