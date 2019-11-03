@@ -5,56 +5,51 @@ import java.util.List;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.goodreads.bin.user_master;
+import com.goodreads.dao.User_masterDao;
 import com.goodreads.service.User_masterService;
 
 public class User_masterServiceImpl implements User_masterService {
 
+	User_masterDao udao;
+	
 	@Override
-	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
+	public void setUdao(User_masterDao udao) {
+		this.udao = udao;
 	}
 
 	@Override
 	public void saveUser(user_master u) {
-		// TODO Auto-generated method stub
-
+		udao.saveUser(u);
 	}
 
 	@Override
 	public void updateUser(user_master u) {
-		// TODO Auto-generated method stub
-
+		udao.updateUser(u);
 	}
 
 	@Override
 	public void deleteUser(user_master u) {
-		// TODO Auto-generated method stub
-
+		udao.deleteUser(u);
 	}
 
 	@Override
 	public user_master getByU_Id(int U_Id) {
-		// TODO Auto-generated method stub
-		return null;
+		return udao.getByU_Id(U_Id);
 	}
 
 	@Override
 	public List<user_master> getUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return udao.getUsers();
 	}
 
 	@Override
 	public user_master Check_Login(String U_Email, String U_Password) {
-		// TODO Auto-generated method stub
-		return null;
+		return udao.Check_Login(U_Email, U_Password);
 	}
 
 	@Override
-	public boolean Update_Block_Status(boolean status) {
-		// TODO Auto-generated method stub
-		return false;
+	public void Update_Block_Status(int U_Id,boolean status) {
+		udao.Update_Block_Status(U_Id, status);
 	}
 
 }
