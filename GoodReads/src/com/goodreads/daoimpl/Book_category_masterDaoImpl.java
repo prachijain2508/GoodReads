@@ -9,40 +9,47 @@ import com.goodreads.dao.Book_category_masterDao;
 
 public class Book_category_masterDaoImpl implements Book_category_masterDao {
 
+	HibernateTemplate template;
+	
 	@Override
 	public void setTemplate(HibernateTemplate template) {
-		// TODO Auto-generated method stub
-
+		this.template=template;
+		
 	}
 
 	@Override
 	public void saveCategory(book_category_master b) {
-		// TODO Auto-generated method stub
-
+		template.save(b);
 	}
 
 	@Override
 	public void updateCategory(book_category_master b) {
-		// TODO Auto-generated method stub
-
+		template.update(b);
 	}
 
 	@Override
 	public void deleteCategory(book_category_master b) {
-		// TODO Auto-generated method stub
-
+		template.delete(b);
 	}
 
 	@Override
 	public book_category_master getByCat_Id(int Cat_Id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (book_category_master) template.get(book_category_master.class, Cat_Id);
+	}
+
+	@Override
+	public List<book_category_master> getCategoriesByISBN(String ISBN) {
+		Object[] params  = {ISBN};
+		String query = "select distinct b from book_category_master b \" +\r\n" + 
+				"                \"join b.books c t \" +\r\n" + 
+				"                \"where c.ISBN = ? \"";
+		return template.find(query, params);
 	}
 
 	@Override
 	public List<book_category_master> getCategories() {
-		// TODO Auto-generated method stub
-		return null;
+		return template.loadAll(book_category_master.class);
 	}
+	
 
 }

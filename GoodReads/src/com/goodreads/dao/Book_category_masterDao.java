@@ -19,5 +19,7 @@ public interface Book_category_masterDao {
 	public book_category_master getByCat_Id(int Cat_Id);
 	
 	public List<book_category_master> getCategories();
+
+	public List<book_category_master> getCategoriesByISBN(String ISBN);
 	
 }
