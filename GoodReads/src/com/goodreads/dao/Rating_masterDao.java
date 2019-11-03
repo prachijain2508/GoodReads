@@ -12,7 +12,7 @@ public interface Rating_masterDao {
 	
 	public void setUdao(User_masterDao udao);
 	
-	public void setBdao(Bookmark_masterDao bdao);
+	public void setBdao(Book_masterDao bdao);
 
 	public void saveRating(rating_master r);
 	
@@ -25,4 +25,6 @@ public interface Rating_masterDao {
 	public List<rating_master> getRatingsByISBN(String ISBN);
 	
 	public List<rating_master> getRatingsByU_Id(int U_Id);
+
+	
 }

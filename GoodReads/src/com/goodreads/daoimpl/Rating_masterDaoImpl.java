@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import com.goodreads.bin.book_master;
 import com.goodreads.bin.rating_master;
 import com.goodreads.bin.user_master;
+import com.goodreads.dao.Book_masterDao;
 import com.goodreads.dao.Bookmark_masterDao;
 import com.goodreads.dao.Rating_masterDao;
 import com.goodreads.dao.User_masterDao;
@@ -14,7 +16,7 @@ public class Rating_masterDaoImpl implements Rating_masterDao {
 
 	private HibernateTemplate template;
 	private User_masterDao udao;
-	private Bookmark_masterDao bdao;
+	private Book_masterDao bdao;
 	
 	@Override
 	public void setUdao(User_masterDao udao) {
@@ -22,7 +24,7 @@ public class Rating_masterDaoImpl implements Rating_masterDao {
 	}
 
 	@Override
-	public void setBdao(Bookmark_masterDao bdao) {
+	public void setBdao(Book_masterDao bdao) {
 		this.bdao = bdao;
 	}
 
